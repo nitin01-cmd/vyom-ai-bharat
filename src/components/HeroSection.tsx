@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import FloatingIndicChars from "./FloatingIndicChars";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -58,12 +59,14 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.45 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base glow-saffron">
-            Explore Vyom
-            <ArrowRight className="ml-2 w-5 h-5" />
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base glow-saffron">
+            <Link to="/chat">
+              Explore Vyom
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
           </Button>
-          <Button size="lg" variant="outline" className="border-muted-foreground/30 hover:bg-muted px-8 py-6 text-base">
-            Try Demo
+          <Button asChild size="lg" variant="outline" className="border-muted-foreground/30 hover:bg-muted px-8 py-6 text-base">
+            <Link to="/chat">Try Demo</Link>
           </Button>
         </motion.div>
       </div>
